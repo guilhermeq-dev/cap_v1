@@ -6,6 +6,8 @@ service MainService {
     entity Orders as projection on db.Orders;
     entity NFs as projection on db.NFs;
 
+    function getSpecificProperties() returns String;
+
 }
 
 // service RiskService {

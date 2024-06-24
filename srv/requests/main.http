@@ -1,8 +1,13 @@
-@server = http://localhost:34127
+@server = http://localhost:41857
 @auth = Authorization: Basic alice:
 
 ### MainService.Customers
 GET {{server}}/odata/v4/main/Customers
+Content-Type: application/json
+{{auth}}
+
+### MainService.Customers
+GET {{server}}/odata/v4/main/getSpecificProperties()
 Content-Type: application/json
 {{auth}}
 
@@ -12,8 +17,8 @@ Content-Type: application/json
 {{auth}}
 
 {
-  "name": "Tate",
-  "age": 25
+  "name": "Tates",
+  "age": 23
 }
 
 ### Main.Customers
