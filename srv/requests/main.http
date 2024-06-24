@@ -1,4 +1,4 @@
-@server = http://localhost:41857
+@server = http://localhost:42771
 @auth = Authorization: Basic alice:
 
 ### MainService.Customers

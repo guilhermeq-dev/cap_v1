@@ -62,11 +62,15 @@ module.exports = async (srv) => {
 
     srv.on('getSpecificProperties', async (req) => {
         const data = await SELECT.from(db.entities.Customers);
-        console.log(data);
 
-        return {
-            name: "teste",
-            age: 25
-        }
+        const filteredProperties = data.reduce((acc, curr) => {
+                if (!acc[curr.age]) {
+                    acc[curr.age] = [];
+                }
+                acc[curr.age].push(curr.name);
+                return acc;
+            }, {});
+
+        return { filteredProperties, data };
     });
 }
